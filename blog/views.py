@@ -19,8 +19,8 @@ class PostListView(ListView):
     ordering = ['-date_posted']
     paginate_by = 5
 
-
-
+def handler404(request):
+    return render(request, 'blog/404.html', status=404)
 
 class PostDetailView(DetailView):
     """Post Detail views"""
