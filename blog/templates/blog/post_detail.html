@@ -8,7 +8,7 @@
 {%block content%}
 <main role="main" class="container">
 <div class="row">
-<div class="col-md-10">
+<div class="col-md-9">
   <article class="media content-section">
     <div class="media-body">
       <div class="article-metadata">
@@ -16,7 +16,7 @@
       </div>
       <h2 class="article-title" >{{ object.title }}</h2>
       <div>
-        <p class="article-content">{{object.content|markdown}}</p>
+        <div class="article-content"> {{object.content|markdown}} </div>
       </div>
       <h1>Comments:</h1>
       <div class="fb-comments" data-href="{{request.build_absolute_uri}}" data-numposts="5"></div>

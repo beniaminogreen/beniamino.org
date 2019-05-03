@@ -78,6 +78,7 @@ a.article-title:hover {
 .btn-facebook {
   background: #4267b2;
   color: #ffffff;
+  margin-top: 10px;
  }
 
  .btn-facebook:hover, .btn-facebook:focus{
@@ -89,6 +90,7 @@ a.article-title:hover {
 .btn-github {
    background: #24292e;
    color: #ffffff;
+   margin-top: 10px;
 }
 
 .btn-github:hover, .btn-github:focus{
@@ -100,6 +102,7 @@ a.article-title:hover {
 .btn-instagram {
   background: #d62976;
   color: #ffffff;
+  margin-top: 10px;
   }
 
 .btn-instagram:hover, .btn-instagram:focus{
@@ -136,4 +139,16 @@ blockquote {
   background-color: rgb(245,245,255);
   border-left: 10px solid rgb(230,230,255);
   margin: 1.5em 10px;
+}
+
+.parent {
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 */
+  position: relative;
+}
+
+.child {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
 }
