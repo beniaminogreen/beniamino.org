@@ -2,8 +2,6 @@ from django.urls import path
 from . import views
 from .views import *
 
-handler404 = views.handler404
-
 urlpatterns = [
     path('', PostListView.as_view(), name = "blog-home"),
     path('post/<int:pk>/', PostDetailView.as_view(), name = "post-detail"),
