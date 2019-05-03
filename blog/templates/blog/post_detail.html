@@ -1,0 +1,28 @@
+{%extends "blog/base.html"%}
+{% load markdown_deux_tags %}
+
+{% block title %}
+{{ object.title }}
+{% endblock title %}
+
+{%block content%}
+<main role="main" class="container">
+<div class="row">
+<div class="col-md-8">
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+        <small class="text-muted">{{ object.date_posted }}</small>
+      </div>
+      <h2 class="article-title" >{{ object.title }}</h2>
+      <div>
+        <p class="article-content">{{object.content|markdown}}</p>
+      </div>
+      <h1>Comments:</h1>
+      <div class="fb-comments" data-href="{{request.build_absolute_uri}}" data-numposts="5"></div>
+  </article>
+
+</div>
+</div>
+</main>
+{% endblock content %}
