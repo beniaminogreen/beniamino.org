@@ -130,3 +130,10 @@ code {
   color: inherit;
   background-color: rgb(245,245,255);
 }
+
+blockquote {
+  color: inherit;
+  background-color: rgb(245,245,255);
+  border-left: 10px solid rgb(230,230,255);
+  margin: 1.5em 10px;
+}

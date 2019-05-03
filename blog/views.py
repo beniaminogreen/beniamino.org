@@ -17,7 +17,7 @@ class PostListView(ListView):
     template_name =  'blog/home.html'
     context_object_name = 'posts'
     ordering = ['-date_posted']
-    paginate_by = 1
+    paginate_by = 5
 
 
 
@@ -65,4 +65,11 @@ def ContactSuccessView(request):
     return render(request, "blog/contactsuccess.html", {'title': 'Thank You'})
 
 
+def handler404(request, *args, **argv):
+    response = render_to_response('blog/404page.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 404
+    return response
 
+def EasterEgg(request):
+    return redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
