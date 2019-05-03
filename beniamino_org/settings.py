@@ -25,7 +25,7 @@ SECRET_KEY = 'lw_w77^+@ek8rlzxce4xyp%8^13cxl+f*v+4%j(z72ae^y$=(w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DJANGO_DEBUG") == "True"
 
-ALLOWED_HOSTS = ["beniamino.org", "www.beniamino.org", "127.0.0.1"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
