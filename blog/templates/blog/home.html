@@ -34,7 +34,7 @@ Beniamino.org
         <small class="text-muted">{{ post.date_posted }}</small>
       </div>
       <h2><a class="article-title" href="{%url 'post-detail' post.id%}">{{ post.title }}</a></h2>
-      <div class="article-content">{{ post.lede | markdown }}</div>
+      <div class="article-content content-markdown">{{ post.lede }}</div>
     </div>
   </article>
   {% endfor %}

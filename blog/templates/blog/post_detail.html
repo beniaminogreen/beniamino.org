@@ -6,23 +6,26 @@
 {% endblock title %}
 
 {%block content%}
+
 <main role="main" class="container">
 <div class="row">
 <div class="col-md-9">
+
   <article class="media content-section">
     <div class="media-body">
       <div class="article-metadata">
         <small class="text-muted">{{ object.date_posted }}</small>
       </div>
-      <h2 class="article-title" >{{ object.title }}</h2>
-      <div>
-        <div class="article-content"> {{object.content|markdown}} </div>
-      </div>
-      <h1>Comments:</h1>
-      <div class="fb-comments" data-href="{{request.build_absolute_uri}}" data-numposts="5"></div>
-  </article>
+      <h2><a class="article-title" href="{%url 'post-detail' post.id%}">{{ object.title }}</a></h2>
+      <div class="article-content content-markdown">{{ object.content }}</div>
+</article>
 
-</div>
-</div>
 </main>
+</div>
+</div>
+
+
+
+
+
 {% endblock content %}
