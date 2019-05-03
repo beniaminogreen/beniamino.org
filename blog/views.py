@@ -14,6 +14,7 @@ import requests
 class PostListView(ListView):
     """Homepage list of posts view"""
     model = Post
+    template_name =  'blog/home.html'
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 1
