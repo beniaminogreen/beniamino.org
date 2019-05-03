@@ -138,6 +138,6 @@ PAGEDOWN_SHOW_PREVIEW = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-django.heroku.settings(locals())
+django_heroku.settings(locals())
 
 
