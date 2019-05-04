@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #third party libraries
     'pagedown',
-    "markdown_deux",
     "beniamino_org"
 ]
 
