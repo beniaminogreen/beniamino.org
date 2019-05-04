@@ -15,6 +15,9 @@
     <link rel="stylesheet" type="text/css" href={% static 'blog/custom.css' %} </link>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=desert"></script>
+
+
   </head>
   {% endblock %}
   <body>
@@ -47,14 +50,12 @@
 </nav>
     </header>
 
-
 {% block content %}
 {% endblock %}
 
 
 
-
-
+  </body>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -79,7 +80,10 @@
         $(".content-markdown img").each(function(){
           $(this).addClass("img-fluid")
         })
+        $(".content-markdown pre").each(function(){
+          $(this).addClass("prettyprint")
+        })
       })
     </script>
-  </body>
+
 </html>
