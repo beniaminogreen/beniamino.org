@@ -34,7 +34,7 @@ def ContactSubmissionView(request):
     else:
         form = ContactForm(request.POST)
         if form.is_valid():
-            
+
             ''' check captcha thingy '''
             recaptcha_response = request.POST.get('g-recaptcha-response')
             data = {
@@ -44,22 +44,22 @@ def ContactSubmissionView(request):
 
             r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
             result = r.json()
-            
+
             if result['success']:
                 contact_from_email = form.cleaned_data['from_email']
                 contact_body = form.cleaned_data['body']
                 contact_name = form.cleaned_data['name']
-                                
+
                 email = EmailMessage(f'Message From {contact_name} ({contact_from_email})', contact_body, to=['ben@greendalba.com'])
                 email.send()
                 return redirect('/success')
             else:
                 messages.error(request, 'Invalid reCAPTCHA. Please try again.')
-            
+
     return render(request, "blog/contactform.html", {'form': form})
 
 def ContactSuccessView(request):
-    return render(request, "blog/contactsuccess.html", {'title': 'Thank You'})
+    return render(request, "blog/contactsuccess.html")
 
 def EasterEgg(request):
     return redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
