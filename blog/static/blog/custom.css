@@ -97,6 +97,20 @@ a.article-title:hover {
         border-color: #24292e;
 }
 
+.btn-linkedin {
+  background: #0077b5;
+  color: #ffffff;
+  margin-top: 10px;
+  }
+
+.btn-linkedin:hover, .btn-linkedin:focus{
+      color: #0077b5;
+      background-color: #ffffff;
+      border-color: #0077b5;
+}
+
+
+
 .btn-instagram {
   background: #d62976;
   color: #ffffff;
