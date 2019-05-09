@@ -8,6 +8,6 @@ urlpatterns = [
     path('about', views.about, name = "blog-about"),
     path('contactform', ContactSubmissionView, name = "blog-contactform"),
     path('success', views.ContactSuccessView, name = "blog-contactsuccess"),
-    path('antara', views.EasterEgg)
+    path('vin', views.EasterEgg)
 
 ]
