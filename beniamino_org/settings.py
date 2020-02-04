@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DJANGO_DEBUG") == "True"
+DEBUG = os.environ.get("DJANGO_DEBUG") == "TRUE"
 
 ALLOWED_HOSTS = ['*', "beniaminoblog.herokuapp.com",]
 
@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*', "beniaminoblog.herokuapp.com",]
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
+    'splash.apps.SplashConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

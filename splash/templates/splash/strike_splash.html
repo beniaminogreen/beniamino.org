@@ -1,0 +1,32 @@
+{% extends "splash/strike_base.html" %}
+{% block content %}
+<div class="card text-center sign_box">
+  <div class="card-header">
+	<h1>
+	{% for digit in n|make_list %}
+	<span class="badge badge-secondary">{{digit}}</span>
+	{%if forloop.revcounter0|divisibleby:3 and forloop.revcounter0 != 0 %} ,
+	{% endif %}
+	{% endfor %}
+	people have signed on.</h1>
+  </div>
+  <div class="card-body">
+	  <h5 class="card-title">Some Text</h5>
+	<p class="card-text">{%lorem%}</p>
+	<a type="button" class="btn btn-primary" href="{% url 'new' %}">Sign The Petition</a>
+  </div>
+</div>
+
+<h1>Signatures</h1>
+<div class="card-columns">
+	{% for signature in signatures %}
+		<div class="card" style="width: 18rem;">
+		  <div class="card-body">
+			  <h4 class="card-title">{{signature.name}}</h4>
+		    <h5 class="card-subtitle mb-2 text-muted">{{signature.level}}, {{signature.department}}</h5>
+		  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+		  </div>
+		</div>
+	{% endfor %}
+</div>
+{% endblock content %}
