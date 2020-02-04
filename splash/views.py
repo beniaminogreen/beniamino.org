@@ -8,11 +8,9 @@ import json
 
 def home(request):
     context = {'n' : 18324, 'signatures':[
-        {'name':'News T. Boomer', 'department':"Department of The Built Environment", "level":"Undergraguate Student"},
+        {'name':'News T. Boomer', 'department':"Department of The Built Environment", "level":"Undergraduate Student"},
         {'name':'Irish O\'Texan', 'department':"Psychology", "level":"Postgraduate Student"},
-        {'name':'News T. Boomer', 'department':"Department of The Built Environment", "level":"Undergraguate Student"},
-        {'name':'Irish O\'Texan', 'department':"Psychology", "level":"Postgraduate Student"},
-        {'name':'Beniamino Green', 'department':"Department of Political Science", "level":"Undergraguate Student"}
+        {'name':'Beniamino Green', 'department':"Department of Political Science", "level":"Undergraduate Student"}
         ]}
     return render(request, 'splash/strike_splash.html', context)
 
