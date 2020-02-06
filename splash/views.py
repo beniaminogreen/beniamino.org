@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
+from splash.models import Signature
 
 import secrets
 import os
@@ -50,6 +51,10 @@ def allowed(request):
             'client_secret': os.environ.get("UCL_OAUTH_SECRET")}
 
     r = requests.get("https://uclapi.com/oauth/user/data",params=params)
+    sig_data=r.json()
+    signature = Signature(id_hash= hash(sig_data["cn"]),
+            department = "POLISCI",
+            level = "UG")
     return JsonResponse(r.json())
 
 def denied(request):
