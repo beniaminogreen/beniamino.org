@@ -14,7 +14,7 @@ def home(request):
         {'name':'Irish O\'Texan', 'department':"Psychology", "level":"Postgraduate Student"},
         {'name':'Beniamino Green', 'department':"Department of Political Science", "level":"Undergraguate Student"}
         ]}
-    return render(request, 'splash/splash.html', context)
+    return render(request, 'splash/strike_splash.html', context)
 
 def login(request):
     state = secrets.token_urlsafe(20)
@@ -54,14 +54,11 @@ def allowed(request):
     r = requests.get("https://uclapi.com/oauth/user/data",params=params)
     sig_data=r.json()
 
-    signature = Signature(id_hash= hash(sig_data["cn"]),
-            name = sig_data['full_name'],
-            department = sig_data['department'],
-            level = "UG")
-    return HttpResponse(signature.name)
+    #signature = Signature(id_hash= hash(sig_data["cn"]),
+            #name = sig_data['full_name'],
+            #department = sig_data['department'],
+            #level = "UG")
+    return HttpResponse('test')
 
 def denied(request):
     return render(request, 'splash/strike_not_authorised.html')
-
-def test_token(request):
-    pass
