@@ -9,4 +9,3 @@ class Signature(models.Model):
     id_hash = models.CharField(max_length=60, primary_key=True)
     department = models.CharField(max_length=60)
     level = models.CharField(max_length=60, choices = student_levels)
-    signature_date = models.DateField()

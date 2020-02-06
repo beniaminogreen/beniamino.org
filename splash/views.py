@@ -8,8 +8,11 @@ import requests
 import json
 
 def home(request):
-    sigs = Signature.objects.all()
-    context = {'n' : 18324, 'signatures': sigs}
+    try:
+        sigs = Signature.objects.all()
+        context = {'n' : 18324, 'signatures': sigs}
+    except:
+        context = {'n' : 18324, 'signatures': {}}
     return render(request, 'splash/strike_splash.html', context)
 
 def login(request):
@@ -54,6 +57,7 @@ def allowed(request):
             name = sig_data['full_name'],
             department = sig_data['department'],
             level = "UG")
+    print('here')
     signature.save()
     return HttpResponse(signature.name)
 
