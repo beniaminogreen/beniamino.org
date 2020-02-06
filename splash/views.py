@@ -8,12 +8,13 @@ import requests
 import json
 
 def home(request):
-    try:
-        sigs = Signature.objects.all()
-        context = {'n' : 18324, 'signatures': sigs}
-    except:
-        context = {'n' : 18324, 'signatures': {}}
-    return render(request, 'splash/strike_splash.html', context)
+    context = {'n' : 18324, 'signatures':[
+       {'name':'Irish O\'Texan', 'department':"Psychology", "level":"Postgraduate Student"},
+        {'name':'News T. Boomer', 'department':"Department of The Built Environment", "level":"Undergraguate Student"},
+        {'name':'Irish O\'Texan', 'department':"Psychology", "level":"Postgraduate Student"},
+        {'name':'Beniamino Green', 'department':"Department of Political Science", "level":"Undergraguate Student"}
+        ]}
+    return render(request, 'splash/splash.html', context)
 
 def login(request):
     state = secrets.token_urlsafe(20)
