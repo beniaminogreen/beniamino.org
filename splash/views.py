@@ -52,10 +52,13 @@ def allowed(request):
 
     r = requests.get("https://uclapi.com/oauth/user/data",params=params)
     sig_data=r.json()
+
     signature = Signature(id_hash= hash(sig_data["cn"]),
-            department = "POLISCI",
+            name = sig_data['full_name'],
+            department = sig_data['department'],
             level = "UG")
-    return JsonResponse(r.json())
+
+    return HttpResponse(signature.name)
 
 def denied(request):
     return render(request, 'splash/strike_not_authorised.html')
