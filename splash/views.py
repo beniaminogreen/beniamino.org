@@ -53,9 +53,7 @@ def allowed(request):
     return JsonResponse(r.json())
 
 def denied(request):
-    return JsonResponse({
-        "error": "Permissions were not allowed"
-    })
+    return render(request, 'splash/strike_not_authorised.html')
 
 def test_token(request):
     pass

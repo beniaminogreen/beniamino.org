@@ -1,0 +1,15 @@
+{% extends "splash/strike_base.html" %}
+{% block content %}
+<div class="card text-center sign_box">
+  <div class="card-header">
+	<h1>Signature Not Authorised</h1>
+  </div>
+  <div class="card-body">
+	  <h5 class="card-title">Some Text</h5>
+	<p class="card-text">{%lorem%}</p>
+	<a type="button" class="btn btn-primary" href="{% url 'splash' %}">Home</a>
+	<a type="button" class="btn btn-primary" href="{% url 'new' %}">Sign The Petition</a>
+  </div>
+</div>
+
+{% endblock content %}
