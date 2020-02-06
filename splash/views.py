@@ -58,8 +58,6 @@ def allowed(request):
             name = sig_data['full_name'],
             department = sig_data['department'],
             level = "UG")
-    print('here')
-    signature.save()
     return HttpResponse(signature.name)
 
 def denied(request):
