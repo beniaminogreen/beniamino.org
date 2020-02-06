@@ -8,11 +8,8 @@ import requests
 import json
 
 def home(request):
-    context = {'n' : 18324, 'signatures':[
-        {'name':'News T. Boomer', 'department':"Department of The Built Environment", "level":"Undergraduate Student"},
-        {'name':'Irish O\'Texan', 'department':"Psychology", "level":"Postgraduate Student"},
-        {'name':'Beniamino Green', 'department':"Department of Political Science", "level":"Undergraduate Student"}
-        ]}
+    sigs = Signature.objects.all()
+    context = {'n' : 18324, 'signatures': sigs}
     return render(request, 'splash/strike_splash.html', context)
 
 def login(request):
@@ -57,7 +54,7 @@ def allowed(request):
             name = sig_data['full_name'],
             department = sig_data['department'],
             level = "UG")
-
+    signature.save()
     return HttpResponse(signature.name)
 
 def denied(request):
